@@ -19,6 +19,18 @@ h3{
     background-color: #8b0606;
     padding: 1rem;
     color: #dadada;
+    position: relative;
+}
+
+h3::after{
+    content: '';
+    position: absolute;
+    background: #f2f2f2;
+    height: 1px;
+    width: 150rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
 }
 
 ul li {
@@ -57,9 +69,10 @@ i{
     width: 20rem;
     height: 20rem;
     position: absolute;
-    top: 100%;
+    top: 10%;
     left: 10%;
-    transform: translateY(-50%)
+    transform: translateY(-50%);
+    
 }
 
 .cv .informacion{
@@ -94,6 +107,44 @@ i{
    
 }
 
+.cv {
+    border: 1px solid red;
+    width: 100%;
+  }
+  /*.Animacion*/
+  .cv:hover .foto {
+    animation-play-state: paused;
+  }
+  .foto { 
+    margin: 20px;
+    animation-name: cuadrado, rebote;
+    animation-duration: 3s, .3s;
+    animation-iteration-count: 2, 20;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-timing-function:linear, ease-in-out;
+  }
+  @keyframes cuadrado {
+    0% {
+      /*opacity: 1;*/
+      left: 0;
+    }
+    100% {
+      /*opacity: 0;*/
+      left: calc(100% - 250px);
+    } 
+  }
+
+  @keyframes rebote {
+    /*0% {*/
+    from {
+      transform: translateY(0);
+    }
+ 
+    to {
+      transform: translateY(100px) scale(1, .8);
+    }
+  }
 
 
 @media (max-width: 800px){
@@ -102,4 +153,50 @@ i{
         
         margin-bottom: 1rem ;
     }
+}
+
+/* Section Portafolio */
+
+section{
+    margin-bottom: 10px;
+}
+
+.row{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 1rem;
+
+}
+
+.row .col{
+  border: 1px solid red;
+}
+
+.row .col img{
+    width: 100%;
+}
+
+/* BUTTON */
+
+.btn{
+    border-radius: 1rem;
+    margin: 1rem 0;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #dadada;
+    text-decoration: none;
+    margin-right: 1rem;
+    box-shadow: 3px -3px 5px -1px rgb(87, 85, 85)inset  ;
+    float: right;
+    overflow: hidden;
+
+}
+
+.btn-primary{
+    background: linear-gradient(135deg, rgba(201,20,0,1) 0%, rgba(194,69,46,1) 50%, rgba(194,69,46,1) 100%); ;
+}
+
+.btn:hover{
+    background: rgba(194,69,46,1);
+    box-shadow: 3px -3px 5px -1px #fff inset ;
 }
