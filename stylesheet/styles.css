@@ -165,15 +165,23 @@ section{
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 1rem;
+   margin-bottom: 50px;
 
 }
 
 .row .col{
-  border: 1px solid red;
+  background: #dadada;
+  transition: .3s;
+  
 }
 
 .row .col img{
     width: 100%;
+}
+
+.row .col:hover{
+    transform: scale(1.1) translate(20px, 10px);
+
 }
 
 /* BUTTON */
